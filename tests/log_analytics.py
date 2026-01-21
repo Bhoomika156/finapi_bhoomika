@@ -13,6 +13,9 @@ def send_log_to_loganalytics(log_type, log_data):
     if not workspace_id or not shared_key:
         print("❌ Missing LOG_ANALYTICS_WORKSPACE_ID or LOG_ANALYTICS_SHARED_KEY environment variables.")
         return
+    else:
+        print(workspace_id)
+        print(shared_key)
 
     body = json.dumps(log_data)
     timestamp = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')

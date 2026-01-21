@@ -1,10 +1,19 @@
 trigger: none
 
-pool:
-  name: student-lab-pool
+resources:
+  pipelines:
+    - pipeline: buildPipeline
+      source: finapi_bhoomika_deploy
+      trigger:
+        branches:
+          include:
+            - main
 
 variables:
   - group: LogAnalyticsSecrets
+
+pool:
+  name: student-lab-pool
 
 steps:
   - script: |
